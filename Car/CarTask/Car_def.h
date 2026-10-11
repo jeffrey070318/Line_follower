@@ -1,0 +1,45 @@
+/**
+ * @file Car_def.h
+ * @author Jeffrey070318(zhengjiafeng)
+ * @brief 小车接线与控制参数
+ * @version 0.1
+ * @date 2026-10-11
+ * @copyright Copyright (c) 2026
+ */
+#ifndef CAR_DEF_H
+#define CAR_DEF_H
+
+/* 接线与调试参数；步频单位为半步每秒，不是车轮转速。 */
+#define CHASSIS_PERIOD_MS 10u
+#define CHASSIS_STRAIGHT_HZ 300
+#define CHASSIS_INNER_HZ 120
+#define CHASSIS_LINE_LOST_MS 100u
+
+#define MOTOR_LEFT_PORT GPIOB
+#define MOTOR_LEFT_PINS {GPIO_PIN_12, GPIO_PIN_13, GPIO_PIN_14, GPIO_PIN_15}
+#define MOTOR_RIGHT_PORT GPIOB
+#define MOTOR_RIGHT_PINS {GPIO_PIN_0, GPIO_PIN_1, GPIO_PIN_10, GPIO_PIN_11}
+#define MOTOR_LEFT_REVERSE 0u
+#define MOTOR_RIGHT_REVERSE 1u
+
+#define GRAY_LEFT_CHANNEL ADC_CHANNEL_2
+#define GRAY_RIGHT_CHANNEL ADC_CHANNEL_3
+#define GRAY_LEFT_THRESHOLD 2000u
+#define GRAY_RIGHT_THRESHOLD 2000u
+#define GRAY_HYSTERESIS 100u
+#define GRAY_LEFT_BLACK_HIGH 1u
+#define GRAY_RIGHT_BLACK_HIGH 1u
+#define GRAY_CALIBRATION_SAMPLES 16u
+
+/* 默认常开按键接地，GPIO 配置为上拉输入。 */
+#define KEY_START_PORT GPIOA
+#define KEY_START_PIN GPIO_PIN_0
+#define KEY_CALIBRATE_PORT GPIOA
+#define KEY_CALIBRATE_PIN GPIO_PIN_1
+#define KEY_ACTIVE_LEVEL GPIO_PIN_RESET
+#define KEY_DEBOUNCE_MS 30u
+#define CAR_LED_PORT GPIOC
+#define CAR_LED_PIN GPIO_PIN_13
+#define CAR_LED_ACTIVE_LEVEL GPIO_PIN_RESET
+
+#endif
